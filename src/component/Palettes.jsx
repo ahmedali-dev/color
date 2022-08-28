@@ -23,14 +23,12 @@ const Palettes = () => {
   };
 
   const addNewColor = () => {
-    // const y = Math.abs(body.getBoundingClientRect().y)+8;
-    // const bound = body.getBoundingClientRect().height;
-
-    // console.log(getcolorheight)
     window.addEventListener("scroll", (e) => {
       const getcolorsheight = document.querySelectorAll(".palettes_result_col");
       const getcolorheight =
         getcolorsheight[getcolorsheight.length - 1].offsetTop;
+      const scrollValue = window.scrollY + 831;
+
       if (getcolorheight <= scrollValue) {
         dispatch(addColor());
       }
