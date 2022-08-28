@@ -25,6 +25,26 @@ const Palettes = () => {
     setTimeout(() => {}, 5000);
   };
 
+  const addNewColor = () => {
+    // const y = Math.abs(body.getBoundingClientRect().y)+8;
+    // const bound = body.getBoundingClientRect().height;
+
+    // console.log(getcolorheight)
+    window.addEventListener("scroll", (e) => {
+      const getcolorsheight = document.querySelectorAll(".palettes_result_col");
+      const getcolorheight =
+        getcolorsheight[getcolorsheight.length - 1].offsetTop;
+      const scrollValue = window.scrollY + 831;
+      console.log(scrollValue, getcolorheight);
+      if (getcolorheight <= scrollValue) {
+        dispatch(addColor());
+      }
+    });
+  };
+
+  useEffect(() => {
+    addNewColor();
+  });
   const copy = (e) => {
     try {
       let vl = e.target.querySelector("small").getAttribute("data-color");
@@ -37,7 +57,7 @@ const Palettes = () => {
     }
   };
 
-  // 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
+  // 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
   return (
     <>
       <div className="palettes">
