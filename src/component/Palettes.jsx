@@ -58,6 +58,7 @@ const Palettes = () => {
   };
 
   // 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
+  // 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
   return (
     <>
       <div className="palettes">
