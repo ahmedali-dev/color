@@ -291,4 +291,9 @@ img {
     height: 220px;
     border-radius: 0.3rem;
   }
+}
+@media screen and (min-width: 585px) {
+  .linear-result {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 }/*# sourceMappingURL=main.css.map */
