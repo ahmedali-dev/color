@@ -1,0 +1,94 @@
+.linear {
+    &-header {
+        padding-top: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        .pageTitle {
+            h1 {
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+
+    &-result {
+        padding: 1rem .4rem;
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 1rem .5rem;
+        margin-top: 3rem;
+
+        &-card {
+            padding: 0;
+            margin: 0;
+            text-align: centers;
+            font-family: sans-serif;
+            position: relative;
+
+            .colorname {
+                padding: .1rem;
+                margin-bottom: 0.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+
+
+                span {
+                    font-size: .7rem;
+
+                    .iconCopy {
+                        color: #333;
+                        font-size: .6rem;
+                        margin-left: 0.4rem;
+
+                    }
+
+                }
+
+
+                .fullscreen {
+                    color: #3c3838;
+                    font-size: .7rem;
+
+                    &:hover {
+                        color: #111010;
+                    }
+                }
+            }
+
+            .colorbackground {
+                box-shadow: 0 4px 15px rgba(68, 68, 68, 0.288);
+                width: 140px;
+                height: 198px;
+                border-radius: .3rem;
+            }
+
+            .copySuccess {
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -30%);
+                width: 90%;
+                background: white;
+                padding: 1rem;
+                text-align: center;
+                border-radius: .3rem;
+                box-shadow: 1px 3px 16px #33333342;
+                font-weight: 700;
+                opacity: 0;
+                // transition: .3s;
+            }
+
+            &:active {
+                .copySuccess {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

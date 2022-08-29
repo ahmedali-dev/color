@@ -1,8 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeartCircleBolt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeartCircleBolt,
+  faWandSparkles,
+} from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addColor } from "../redux/ColorSlice";
+import { useRef } from "react";
+import { useState } from "react";
 const Palettes = () => {
   // getColorFinsh
   const { colorFinish, color, colorFilter } = useSelector(
@@ -19,18 +24,29 @@ const Palettes = () => {
   }, []);
 
   const popup = (e) => {
-    setTimeout(() => {}, 5000);
+    setTimeout(() => { }, 5000);
   };
 
   const addNewColor = () => {
     window.addEventListener("scroll", (e) => {
-      const getcolorsheight = document.querySelectorAll(".palettes_result_col");
-      const getcolorheight =
-        getcolorsheight[getcolorsheight.length - 1].offsetTop;
-      const scrollValue = window.scrollY + 831;
+      try {
+        const getcolorsheight = document.querySelectorAll(
+          ".palettes_result_col"
+        );
+        let getheight;
+        try {
+          getheight =
+            getcolorsheight[getcolorsheight.length - 1].offsetTop;
+        } catch (error) {
+          console.log(error);
+        }
+        const scrollValue = window.scrollY + 831;
 
-      if (getcolorheight <= scrollValue) {
-        dispatch(addColor());
+        if (getheight <= scrollValue) {
+          dispatch(addColor());
+        }
+      } catch (error) {
+        console.log(error);
       }
     });
   };
@@ -42,7 +58,7 @@ const Palettes = () => {
     try {
       let vl = e.target.querySelector("small").getAttribute("data-color");
 
-      navigator.clipboard.writeText(vl).then(() => {});
+      navigator.clipboard.writeText(vl).then(() => { });
     } catch (error) {
       return "";
     }
@@ -50,11 +66,24 @@ const Palettes = () => {
 
   // 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
   // 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
+  /**
+   * 
+   *         <div className="pop">
+          <FontAwesomeIcon className="pop-icon" icon={faWandSparkles} />
+          <span>color copied</span>
+        </div>
+   */
+
   return (
     <>
+      {/* message pop up */}
+      <div className="popList">
+        {/* {popList.length > 0 ? popList.map((pop) => pop) : ""} */}
+      </div>
+
       <div className="palettes">
         {/* header */}
-        <div className="s palettes-header container">
+        <div className="palettes-header container">
           <div className="pageTitle">
             <h1>ColorPalettes</h1>
             <div>Get beautiful color schemes</div>
@@ -71,7 +100,9 @@ const Palettes = () => {
                   {color.hex.map((c) => (
                     <div
                       style={{ background: `${c[0]}` }}
-                      onClick={(e) => copy(e)}
+                      onClick={(e) => {
+                        copy(e);
+                      }}
                     >
                       <small data-color={c[0]} className={c[1]}>
                         {c[0]}
@@ -94,9 +125,6 @@ const Palettes = () => {
           })}
         </div>
       </div>
-
-      {/* message pop up */}
-      <div className="pop"></div>
     </>
   );
 };

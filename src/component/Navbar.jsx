@@ -34,6 +34,12 @@ const Navbar = () => {
             Palettes
           </Link>
         </div>
+
+        <div className="nav-item">
+          <Link to="/Linear" className="nav-item-link">
+            Linear
+          </Link>
+        </div>
       </div>
 
       <div className="navToggle">

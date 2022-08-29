@@ -1,0 +1,40 @@
+@media screen and (min-width: 325px) {
+    .linear {
+
+        &-result {
+
+
+            &-card {
+
+                .colorname {
+
+
+
+                    span {
+                        font-size: .8rem;
+
+                        .iconCopy {
+
+                            font-size: .7rem;
+
+
+                        }
+
+                    }
+
+
+                    .fullscreen {
+                        font-size: .8rem;
+                    }
+                }
+
+                .colorbackground {
+                    box-shadow: 0 4px 15px rgba(68, 68, 68, 0.288);
+                    width: 160px;
+                    height: 220px;
+                    border-radius: .3rem;
+                }
+            }
+        }
+    }
+}
