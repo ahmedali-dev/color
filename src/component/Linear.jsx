@@ -72,7 +72,7 @@ const Palettes = () => {
                             className="linear-result-card"
                             data-id={e.id}
                             onClick={() => {
-                                Copy(`backgroundImage: "linear-gradient(${e.deg}, ${e.c1}, ${e.c2})"`);
+                                Copy(`backgroundImage: "linear-gradient(${e.deg}deg, ${e.c1}, ${e.c2})"`);
                             }}
                         >
                             <div
