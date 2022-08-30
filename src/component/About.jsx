@@ -30,7 +30,7 @@ const About = () => {
           <div className="about-row-card">
             <a
               className="about-row-card-link"
-              href="https://github.com/ahmedali-dev"
+              href="https://github.com/Ahmedmsaber"
             >
               <div className="about-row-card-image">
                 <img
