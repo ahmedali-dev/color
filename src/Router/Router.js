@@ -3,6 +3,7 @@ import Palettes from "../component/Palettes";
 import Palette from "../component/Palette";
 import Home from "../component/Home";
 import Linear from "../component/Linear";
+import About from "../component/About";
 
 const Router = () => {
   return (
@@ -17,6 +18,9 @@ const Router = () => {
 
         {/* linear */}
         <Route path="/linear" element={<Linear />} />
+
+        {/* about */}
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );
