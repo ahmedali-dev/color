@@ -25,6 +25,18 @@
             }
         }
     }
+
+    .home {
+        padding: 1.5rem;
+
+        .row {
+            .image {
+                .bg-image {}
+            }
+        }
+    }
+
+
 }
 
 
@@ -32,6 +44,88 @@
     .linear {
         &-result {
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    .home {
+        .row {
+            .col {
+                .image {
+                    height: 60vh !important;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .home {
+        padding: 3rem;
+
+        .row {
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
+
+            .col {
+                // height: 60vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .image {
+                    height: 80vh !important;
+
+                    .bg-image {
+                        // width: 400px !important;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .home {
+        .row {
+            grid-template-columns: 1fr 2fr;
+
+            .col {
+
+                &:first-child {
+                    order: 0;
+                }
+
+                &:last-child {
+                    order: 1;
+                }
+
+                // height: 60vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .image {
+                    height: 80vh !important;
+
+                    .bg-image {
+                        // width: 400px !important;
+                    }
+                }
+
+                .content {
+                    .header {
+                        font-size: 4.5rem;
+                        text-align: center;
+                        line-height: 5rem;
+                    }
+
+                    .link {
+                        width: 65% !important;
+                    }
+                }
+            }
         }
     }
 }

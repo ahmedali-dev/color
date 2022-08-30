@@ -1,0 +1,114 @@
+.home {
+    padding: 1rem;
+    background: #fff;
+
+    .row {
+
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+
+        .col {
+
+            &:first-child {
+                order: 1;
+            }
+
+            &:last-child {
+                order: 0;
+            }
+
+            .image {
+                position: relative;
+                width: 100%;
+                height: 40vh;
+                // background-color: forestgreen;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 2rem;
+
+                .bg-image {
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: .3rem;
+                }
+
+                .cl1 {
+                    display: none;
+                    transition: .3s ease-in-out;
+                }
+
+                .cl2 {
+                    // animation: 1.5s image ease-in 1.3s infinite alternate;
+                }
+
+                @keyframes image {
+                    0% {
+                        opacity: 1;
+                    }
+
+                    100% {
+                        // animation-delay: 2000ms;
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .content {
+                font-family: sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column wrap;
+
+                .header {
+                    font-weight: 900;
+                    font-size: 2.3rem;
+                    text-transform: capitalize;
+                    line-height: 3rem;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+
+                .title {
+                    margin-bottom: 1rem;
+                    text-transform: capitalize;
+                    text-align: center;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                }
+
+                .link {
+                    &-prim {
+                        background: #3a86ff;
+                        color: white;
+                    }
+
+                    width: 100%;
+                    height: 48px;
+                    display: flex;
+                    background: white;
+                    margin-top: 1rem;
+                    border-radius: 0.3rem;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.1rem;
+                    color: #333;
+                    box-shadow: 1px 3px 18px #00000036;
+                    transition: .2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.03);
+                    }
+                }
+            }
+        }
+
+
+
+    }
+}
